@@ -1,6 +1,6 @@
 const aedes = require('aedes')();
 const server = require('net').createServer(aedes.handle);
-const PORT = 1883;
+const PORT = process.env.PORT || 1883 ;
 
 server.listen(PORT, function () {
   console.log('MQTT server started on port', PORT);
